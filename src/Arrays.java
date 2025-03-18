@@ -58,4 +58,20 @@ public class Arrays {
         return arr;
     }
 
+    public static int findSecondLargest(int[] arr) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int number : arr) {
+            if (number > largest) {
+                secondLargest = largest;
+                largest = number;
+            } else if (number > secondLargest && number < largest) {
+                secondLargest = number;
+            }
+        }
+
+        return secondLargest;
+    }
+
 }
