@@ -1,5 +1,5 @@
 
-public class Arrays {
+public class ArraysLearn {
 
     public static void main(String[] args){
 
