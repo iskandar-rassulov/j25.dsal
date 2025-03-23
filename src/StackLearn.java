@@ -1,32 +1,33 @@
+import java.util.Scanner;
 import java.util.Stack;
 
 public class StackLearn {
 
-    private static Stack<String> mugiwaras = new Stack<>();
+    private static final Stack<String> textarea = new Stack<>();
 
     public static void main(String[] args){
-        add("Zoro");
-        add("Nami");
-        add("Usopp");
-        add("Sanji");
-        System.out.println(mugiwaras);
-
-        delete();
-        System.out.println(mugiwaras);
-
-        delete();
-        System.out.println(mugiwaras);
-
-        delete();
-        System.out.println(mugiwaras);
+        textTyper();
     }
 
-    public static void add(String name){
-        mugiwaras.push(name);
-        System.out.println(name + " will be with Luffy. Let's goo!!!");
+    public static void textTyper(){
+        Scanner scan = new Scanner(System.in);
+        int temp = 0;
+
+        while(temp == 0){
+            String s = scan.next();
+
+            if(s.equals("delete")){
+                textarea.pop();
+            }else if(s.equals("end")){
+                temp = 1;
+            }
+            else{
+                textarea.push(s);
+            }
+
+            System.out.println(textarea);
+        }
+
     }
 
-    public static void delete(){
-        System.out.println("Oh we lost " + mugiwaras.pop());
-    }
 }
